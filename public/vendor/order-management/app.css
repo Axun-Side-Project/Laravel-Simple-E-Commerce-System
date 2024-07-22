@@ -1,0 +1,51 @@
+
+/* reset */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    background-color: #F0F1F6;
+    overflow: hidden;
+    font-family: 'Figtree', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/*  */
+
+.site-header {
+    width: 100%;
+    background-color: #0DC7C6;
+    color: #FFF;
+    padding: 1rem 2rem;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.application {
+    display: flex;
+}
+
+.content-area {
+    width: 100%;
+}
+
+.main-content {
+    padding: 2rem;
+}

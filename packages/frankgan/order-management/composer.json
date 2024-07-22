@@ -1,0 +1,15 @@
+{
+    "name": "frankgan/order-management",
+    "autoload": {
+        "psr-4": {
+            "Frankgan\\OrderManagement\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "GANSOONLEE",
+            "email": "vincentgan0402@gmail.com"
+        }
+    ],
+    "require": {}
+}
