@@ -1,41 +1,36 @@
 
-<style>
-
-aside.sidebar {
-    width: 20rem;
-    height: 100vh;
-    position: sticky;
-    top: 0;
-    background-color: #2F3744;
-    color: #fff;
-}
-
-aside.sidebar ul {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    width: 100%;
-}
-
-aside.sidebar ul li {
-    width: 100%;
-    padding: 1rem 0;
-    text-align: center;
-}
-
-aside.sidebar ul li.active {
-    background-color: #324452;
-}
-
-</style>
+@php
+    $currentRoute = Route::currentRouteName();
+    $currentRouteGroup = Route::currentRouteName();
+@endphp
 
 <aside class="sidebar">
 
-    <ul>
-        <li class="active">顧客</li>
-        <li>商品</li>
-        <li>訂單</li>
-    </ul>
+    <div class="menulist">
+        <a @class(['sidebar-item', 'active' => $currentRoute === 'index']) href="#">儀表盤</a>
+        <ul @class(['sidebar-item', 'dropdown-toggle', 'active' => Route::is('customer.*')]) data-target="customer">
+            <p>顧客</p>
+            <i class="fa fa-angle-down"></i>
+        </ul>
+        <ul class="list-unstyled collapse" id="customer">
+            <li><a href="#">顧客列表</a></li>
+        </ul>
+        <ul @class(['sidebar-item', 'dropdown-toggle', 'active' => Route::is('product.*')]) data-target="product">
+            <p>商品</p>
+            <i class="fa fa-angle-down"></i>
+        </ul>
+        <ul class="list-unstyled collapse" id="product">
+            <li><a href="#">商品列表</a></li>
+            <li><a href="#">匯入資料檔</a></li>
+            <li><a href="#">匯出資料檔</a></li>
+        </ul>
+        <ul @class(['sidebar-item', 'dropdown-toggle', 'active' => Route::is('order.*')]) data-target="order">
+            <p>訂單</p>
+            <i class="fa fa-angle-down"></i>
+        </ul>
+        <ul class="list-unstyled collapse" id="order">
+            <li><a href="#">訂單列表</a></li>
+        </ul>
+    </div>
 
 </aside>
-

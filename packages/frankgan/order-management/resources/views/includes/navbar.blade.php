@@ -9,11 +9,26 @@
         display: flex;
         justify-content: space-between
     }
+
+    .setting-area {
+        display: flex;
+        justify-content: flex-end;
+        column-gap: 1rem;
+    }
+
+    .setting-area a:hover {
+        color: #00adad;
+    }
 </style>
 
 <nav class="navbar">
 
     <p><span id="period"></span>阿循</p>
+
+    <div class="setting-area">
+        <a href="">系統設定</a>
+        <a href="">帳號設定</a>
+    </div>
 
 </nav>
 

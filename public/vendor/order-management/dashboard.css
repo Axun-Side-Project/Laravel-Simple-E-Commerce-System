@@ -1,0 +1,24 @@
+
+.dashboard {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: 3fr 5fr;
+    height: 85%;
+    row-gap: 2rem;
+    column-gap: 2rem;
+}
+
+.main-content .container {
+    border-radius: 4px;
+    background-color: #FFF;
+    border: 2px solid #0DC7C6;
+    height: 100%;
+    padding: 1.5rem;
+    box-shadow: 2px 2px 2px #00000033;
+    cursor: grab;
+    transition: all .12s ease-in-out;
+}
+
+.main-content .container:hover {
+    box-shadow: 3px 3px 10px #00000033;
+}

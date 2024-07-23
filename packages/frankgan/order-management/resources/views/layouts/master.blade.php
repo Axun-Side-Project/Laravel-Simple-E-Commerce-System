@@ -10,6 +10,8 @@
         <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="{{ asset('vendor/order-management/app.css') }}"> <!-- External CSS file -->
+
+        @stack("style")
     </head>
     <body>
         <header class="site-header">
@@ -39,6 +41,8 @@
 </html>
 
 <script>
+
+    // 系統時間更新
     document.addEventListener('DOMContentLoaded', function() {
         function formatDate(date) {
             const year = date.getFullYear();
@@ -53,7 +57,7 @@
                            hours < 18 ? '下午' : '晚上';
             const formattedHours = String(hours % 12 || 12).padStart(2, '0');
 
-            return `${year}年${month}月${day}日 ${period}${formattedHours}:${minutes}:${seconds}`;
+            return `${year}年${month}月${day}日 ${period} ${formattedHours}:${minutes}:${seconds}`;
         }
 
         function updateTime() {
@@ -64,5 +68,21 @@
 
         updateTime();
         setInterval(updateTime, 1000); // 每秒更新一次
+    });
+
+    // 菜單
+    document.addEventListener('DOMContentLoaded', function() {
+        let toggles = document.querySelectorAll('.dropdown-toggle');
+        toggles.forEach(function(toggle) {
+            toggle.addEventListener('click', function() {
+                toggle.classList.toggle('show');
+                let target = document.getElementById(toggle.getAttribute('data-target'));
+                if (target.classList.contains('show')) {
+                    target.classList.remove('show');
+                } else {
+                    target.classList.add('show');
+                }
+            });
+        });
     });
 </script>
